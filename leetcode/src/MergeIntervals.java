@@ -2,37 +2,37 @@ import java.util.Arrays;
 
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
-        int size = intervals.length;
-        if(size==0) return new int[0][0];
+        int intervalsSize = intervals.length;
+        if(intervalsSize == 0) return new int[0][0];
 
         Arrays.sort(intervals, (x, y) -> x[0]-y[0]);
 
-        int[][] merged = new int[size][2];
+        int[][] merged = new int[intervalsSize][2];
         merged[0] = intervals[0];
 
-        int pointMerged = 0;
-        int pointAppendNode = 1;
+        int indexMerged = 0;
+        int indexIntervals = 1;
 
         while(true) {
-            if(pointAppendNode >= intervals.length) break;
+            if(indexIntervals >= intervalsSize) break;
 
-            int startMergedNode = merged[pointMerged][0];
-            int endMergedNode = merged[pointMerged][1];
+            int startMergedNode = merged[indexMerged][0];
+            int endMergedNode = merged[indexMerged][1];
 
-            int startAppendNode = intervals[pointAppendNode][0];
-            int endAppendNode = intervals[pointAppendNode][1];
+            int startIntervalsNode = intervals[indexIntervals][0];
+            int endIntervalsNode = intervals[indexIntervals][1];
 
-            if(endMergedNode >= startAppendNode) { //merging task target
-                merged[pointMerged][0] = startMergedNode;
-                merged[pointMerged][1] = Math.max(endMergedNode, endAppendNode);
+            if(endMergedNode >= startIntervalsNode) { //merging task target
+                merged[indexMerged][0] = startMergedNode;
+                merged[indexMerged][1] = Math.max(endMergedNode, endIntervalsNode);
             } else { //add new node
-                pointMerged++;
-                merged[pointMerged][0] = startAppendNode;
-                merged[pointMerged][1] = endAppendNode;
+                indexMerged++;
+                merged[indexMerged][0] = startIntervalsNode;
+                merged[indexMerged][1] = endIntervalsNode;
             }
-            pointAppendNode++;
-
+            indexIntervals++;
         }
-        return Arrays.copyOfRange(merged, 0, pointMerged+1);
+
+        return Arrays.copyOfRange(merged, 0, indexMerged+1);
     }
 }
