@@ -7,7 +7,7 @@ public class ThreeSum {
 
         int tot = nums.length;
 
-        Arrays.sort(nums);
+        //Arrays.sort(nums);
 
         for(int num : nums) {
             dic.put(num, dic.getOrDefault(num,0)+1);
