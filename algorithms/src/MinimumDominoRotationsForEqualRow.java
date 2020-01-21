@@ -1,6 +1,3 @@
-import java.util.HashSet;
-import java.util.Set;
-
 public class MinimumDominoRotationsForEqualRow {
     public int minDominoRotations(int[] A, int[] B) {
         int totalLength = A.length;

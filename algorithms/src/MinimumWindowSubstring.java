@@ -2,22 +2,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MinimumWindowSubstring {
-    public String minWindow(String s, String t) {
+    public static void main(String args[]) {
+        System.out.println(minWindow("ADOBECODEBANC","ABC"));
+    }
 
-        if(s.length() < t.length()) return "";
-        if(s.equals(t)) return s;
-
+    public static String minWindow(String s, String t) {
         Map<Character, Integer> dic = convertTargetToMap(t);
         Map<Character, Integer> refer = convertTargetToMap(t); //refer에서 값을 빼주는 방식. refer size가 0이면 find 했다고 판단
 
         int startPoint = findNext(s, 0, dic);
         int endPoint = startPoint;
         if(startPoint == -1) return "";
-        char startC = s.charAt(startPoint);
-        deleteRefer(startC, refer, dic);
 
         int minStartPoint = -1, minEndPoint = -1;
         int minWindows = Integer.MAX_VALUE;
+
+        deleteRefer(s.charAt(startPoint), refer, dic);
 
         while(true) {
             if(startPoint == -1) break;
@@ -60,7 +60,7 @@ public class MinimumWindowSubstring {
         return true;
     }
 
-    public void deleteRefer(char c, Map<Character, Integer> refer, Map<Character, Integer> dic) {
+    public static void deleteRefer(char c, Map<Character, Integer> refer, Map<Character, Integer> dic) {
         if(refer.getOrDefault(c,1) == 1) {
             refer.remove(c);
         } else {
@@ -68,7 +68,7 @@ public class MinimumWindowSubstring {
         }
     }
 
-    public void addRefer(char c, Map<Character, Integer> refer, int count) {
+    public static void addRefer(char c, Map<Character, Integer> refer, int count) {
         refer.put(c, refer.getOrDefault(c, 0) + count);
     }
 
@@ -80,7 +80,7 @@ public class MinimumWindowSubstring {
         return -1; //not found
     }
 
-    private Map<Character, Integer> convertTargetToMap(String t) {
+    private static Map<Character, Integer> convertTargetToMap(String t) {
         int tLength = t.length();
         Map<Character, Integer> dic = new HashMap<>();
         for(int i=0; i<tLength; i++) {
