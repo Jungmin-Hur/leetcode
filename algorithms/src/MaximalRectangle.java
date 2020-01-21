@@ -40,16 +40,18 @@ public class MaximalRectangle {
                 }
             }
             for(int j=0; j<column; j++) {
+                if(height[j]==0) continue; //0인 경우 아래는 아예 연산하지 않아도 됨
+
                 int min_height = Integer.MAX_VALUE;
                 int index = 1;
+
                 for(int k=j; k<column; k++) {
+                    if(height[k]==0) break; //중간에 0을 만날 경우 더이상 계산하지 않아도 됨
                     min_height = Math.min(min_height, height[k]);
                     max = Math.max(max, min_height * index);
                     index++;
                 }
             }
-//            for(int j=0;j<column;j++) System.out.print(height[j] + " , ");
-//            System.out.println();
         }
 
         return max;
