@@ -5,11 +5,11 @@
 public class RemoveKDigits {
 
     public static void main(String args[]) {
-//        System.out.println(removeKdigits("1107", 1));
-//        System.out.println(removeKdigits("0", 0));
-//        System.out.println(removeKdigits("1432219", 3));
+        System.out.println(removeKdigits("1107", 1));
+        System.out.println(removeKdigits("0", 0));
+        System.out.println(removeKdigits("1432219", 3));
         System.out.println(removeKdigits("10200", 1));
-//        System.out.println(removeKdigits("10", 2));
+        System.out.println(removeKdigits("10", 2));
     }
 
     public static String removeKdigits(String num, int k) {
@@ -20,9 +20,9 @@ public class RemoveKDigits {
         if(k==0) return num;
 
         StringBuffer sb = new StringBuffer();
-        int start = 0;
-        int end = num.length() - k;
         int countForFind = num.length() - k;
+        int start = 0;
+        int end = num.length() - countForFind;
         while(true) {
             if(countForFind == 0) break; //더 이상 찾을 것이 없으면...
             int min = Integer.MAX_VALUE;
@@ -33,14 +33,13 @@ public class RemoveKDigits {
                     minIndex = i;
                 }
             }
-            if(sb.length() == 0 && num.charAt(minIndex) == '0') {
-//                System.out.println("no!! " + num.charAt(minIndex));
-                //skip.. 제일 첫자리는 0이 될 수 없다.
+            System.out.println(start+ "," + end + "," + countForFind + ",min:"+min + "," + minIndex + "," + sb.toString());
+            if(sb.length() == 0 && num.charAt(minIndex) == '0') { // 제일 첫자리는 0이 될 수 없음
             } else {
                 sb.append(num.charAt(minIndex));
-                countForFind--; //하나 찾았으므로
             }
 
+            countForFind--; //하나 찾았음..
             start = minIndex + 1;
             end = num.length() - countForFind;
         }
