@@ -9,7 +9,7 @@ import common.Flip;
 import common.FlippedSchoolType;
 
 @Amazon
-@Flip(value= FlippedSchoolType.DP_STACK)
+@Flip(FlippedSchoolType.DP_STACK)
 public class LongestPalindrome {
     public String longestPalindrome(String s) {
         int maxLength = 0;
