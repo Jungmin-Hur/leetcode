@@ -1,6 +1,5 @@
 package dpandstack;
 
-
 import common.Flip;
 import common.FlippedSchoolType;
 
