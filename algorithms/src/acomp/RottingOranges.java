@@ -1,6 +1,6 @@
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 import common.Jmlist;
 
 import java.util.*;
@@ -9,7 +9,7 @@ import java.util.*;
  * 994. Rotting Oranges
  * https://leetcode.com/problems/rotting-oranges/
  */
-@Amazon
+@Acomp
 @Jmlist
 public class RottingOranges {
 

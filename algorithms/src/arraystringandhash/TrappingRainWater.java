@@ -1,10 +1,10 @@
 package arraystringandhash;
 
-import common.Amazon;
+import common.Acomp;
 import common.Flip;
 import common.FlippedSchoolType;
 
-@Amazon
+@Acomp
 @Flip(value= FlippedSchoolType.ARRAY_STRING_AND_HASH)
 public class TrappingRainWater {
     public static void main(String args[]) {

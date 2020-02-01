@@ -2,16 +2,16 @@
  * 819. Most Common Word
  * https://leetcode.com/problems/most-common-word/
  */
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-@Amazon
+@Acomp
 public class MostCommonWord {
     public String mostCommonWord(String paragraph, String[] banned) {
         String[] symbols = new String[]{"!","?","'",",",";",".","  "};

@@ -1,9 +1,9 @@
-package amazon; /**
+package acomp; /**
  * 937. Reorder Data in Log Files
  * https://leetcode.com/problems/reorder-data-in-log-files/
  */
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
  * with the identifier used in case of ties.
  * The digit-logs should be put in their original order.
  */
-@Amazon
+@Acomp
 public class ReorderDataInLogFiles {
     public static void main(String args[]) {
 //        String[] ret = reorderLogFiles(new String[]{"dig2 3 1 5"});

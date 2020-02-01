@@ -2,13 +2,13 @@
  * 973. K Closest Points to Origin
  * https://leetcode.com/problems/k-closest-points-to-origin/
  */
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.Arrays;
 
-@Amazon
+@Acomp
 public class KClosest {
     public int[][] kClosest(int[][] points, int K) {
         long[] dist = new long[points.length];

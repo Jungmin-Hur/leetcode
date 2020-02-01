@@ -1,13 +1,13 @@
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 import common.Jmlist;
 
 /**
  * 200. Number of Islands
  * https://leetcode.com/problems/number-of-islands/
  */
-@Amazon
+@Acomp
 @Jmlist
 public class NumberOfIslands {
     public static void main(String args[]) {

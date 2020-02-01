@@ -1,13 +1,13 @@
-package amazon; /**
+package acomp; /**
  * 295. Find Median from Data Stream
  * https://leetcode.com/problems/find-median-from-data-stream/
  */
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.*;
 
-@Amazon
+@Acomp
 public class FindMedianFromDataStream {
     public static void main(String args[]) {
         MedianFinder obj = new MedianFinder();

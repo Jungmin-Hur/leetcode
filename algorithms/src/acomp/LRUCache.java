@@ -1,6 +1,6 @@
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ import java.util.*;
  * 146. LRU Cache
  * https://leetcode.com/problems/lru-cache/
  */
-@Amazon
+@Acomp
 public class LRUCache {
     private int capacity;
     private Map<Integer, Integer> cache;

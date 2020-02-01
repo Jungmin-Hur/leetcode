@@ -1,16 +1,16 @@
-package amazon; /**
+package acomp; /**
  * 1268. Search Suggestions System
  * https://leetcode.com/problems/search-suggestions-system/
  */
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 //need more improvment to trie alogrithm!!!
-@Amazon
+@Acomp
 public class SearchSuggestionsSystem {
     public static void main (String args[]) {
         System.out.println(suggestedProducts(new String[]{"mobile","mouse","moneypot","monitor","mousepad"}, "mouse"));

@@ -2,14 +2,14 @@
  * 1. Two Sum
  * https://leetcode.com/problems/two-sum/
  */
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Amazon
+@Acomp
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> dic = new HashMap<>();

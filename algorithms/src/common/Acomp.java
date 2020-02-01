@@ -1,5 +1,5 @@
 package common;
 
-public @interface Amazon {
+public @interface Acomp {
     String value() default "Amazon";
 }

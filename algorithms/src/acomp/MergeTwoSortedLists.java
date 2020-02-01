@@ -1,12 +1,12 @@
-package amazon;
+package acomp;
 
-import common.Amazon;
+import common.Acomp;
 
 /**
  * 21. Merge Two Sorted Lists
  * https://leetcode.com/problems/merge-two-sorted-lists/
  */
-@Amazon
+@Acomp
 public class MergeTwoSortedLists {
     private static class ListNode {
         int val;

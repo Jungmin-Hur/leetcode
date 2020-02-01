@@ -1,12 +1,12 @@
-package amazon; /**
+package acomp; /**
  * 957. Prison Cells After N Days
  * https://leetcode.com/problems/prison-cells-after-n-days/
  */
 
-import common.Amazon;
+import common.Acomp;
 import common.Jmlist;
 
-@Amazon
+@Acomp
 @Jmlist
 public class PrisonAfterNDays {
     public static void main(String args[]) {
