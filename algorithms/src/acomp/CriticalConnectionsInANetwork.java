@@ -45,73 +45,76 @@ public class CriticalConnectionsInANetwork {
         }
     }
 
+    static int time = 0;
+    static List<Integer>[] network;
+    static int[] lowestVertex; //lowest vertext from current vertex
+    static int[] discoveredTime; //discovered time of vertext
+    static boolean[] visited;
+    static List<List<Integer>> critialConnections;
+
     public static List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
 
-        //build graph
-        List<Integer>[] graph = new ArrayList[n];
-        for(int i=0; i<n; i++) graph[i] = new ArrayList<>();
+        initialization(n);
 
-        for(List<Integer> connection :connections) {
-            int from = connection.get(0);
-            int to = connection.get(1);
-            graph[from].add(to);
-            graph[to].add(from);
-        }
+        buildNetwork(connections);
 
-        int[] lowestVertex = new int[n]; //lowest vertext from current vertex u
-        int[] discoveredTime = new int[n]; //discovered time
-        Arrays.fill(discoveredTime, -1);
+        getCritialConnections(0, -1);
 
-        List<List<Integer>> ans = new ArrayList<>();
-
-        for(int u=0; u < n; u++) {
-            if(discoveredTime[u] != -1) {
-                dfs(u, u, lowestVertex, discoveredTime, graph, ans);
-            }
-        }
-        return ans;
+        return critialConnections;
     }
 
-    static int time = 0;
+    public static void initialization(int n) {
+        lowestVertex = new int[n];
+        discoveredTime = new int[n];
+        visited = new boolean[n];
+        critialConnections = new ArrayList<>();
 
-    //not working.. how???
-    public static void dfs(int current, int preCurrent, int[] lowestVertex, int[] discoveredTime, List<Integer>[] graph, List<List<Integer>> ans) {
+        network = new ArrayList[n];
+        for(int i=0; i<n; i++) network[i] = new ArrayList<>();
+    }
+
+    public static void buildNetwork(List<List<Integer>> connections) {
+        for(List<Integer> connection :connections) {
+            network[connection.get(0)].add(connection.get(1));
+            network[connection.get(1)].add(connection.get(0));
+        }
+    }
+
+    //dfs search
+    public static void getCritialConnections(int current, int parent) {
+
         time++;
         lowestVertex[current] = time;
         discoveredTime[current] = time;
+        visited[current] = true;
 
-        for(int adjacent : graph[current]) {
-            if(adjacent == preCurrent) continue;
+        for(int neighbor : network[current]) {
+            if(neighbor == parent) continue;
 
-            if(discoveredTime[adjacent] < 0) { //if it doesn't discovered
-                dfs(adjacent, current, lowestVertex, discoveredTime, graph, ans);
-                lowestVertex[current] = Math.min(lowestVertex[current], lowestVertex[adjacent]);
+            if(visited[neighbor] == false) { //if it doesn't discovered
 
-                if(lowestVertex[adjacent] > discoveredTime[current]) {
-                    ans.add(Arrays.asList(current, adjacent));
+                getCritialConnections(neighbor, current);
+
+                lowestVertex[current] = Math.min(lowestVertex[current], lowestVertex[neighbor]);
+
+                /**
+                 * lowestVertex of neighbor > current's discoveredTime => critical connection!!
+                 * lowestVertex of neighbor <= current's discoveredTime
+                 * => not critical connection. there is a circular network.
+                 */
+                if(lowestVertex[neighbor] > discoveredTime[current]) {
+                    critialConnections.add(Arrays.asList(current, neighbor));
                 }
-            } else {
-                lowestVertex[current] = Math.min(lowestVertex[current], discoveredTime[adjacent]);
+            } else { //if this neighbor is already visited, lowerVertext of current is updated!!
+                lowestVertex[current] = Math.min(lowestVertex[current], discoveredTime[neighbor]);
             }
         }
     }
-
-    /**
-     * idea
-     * dfs search를 하면서.. 순서를 저장해놓는다 d[]
-     * 해당 노드에서 search할 수 있는 가장 작은 값을 저장해 둔다 l[]
-     * l[현재노드] > d[부모노드] 인 경우 critical connection 지점이고, 결과에 저장해 둔다.
-     *
-     * dfs를 하는 것은 어떻게???
-     * 해당 노드에서 search가능한 가장 작은 값을 어떻게 찾는지?
-     */
 
     /**
      * 1st solution
      * https://leetcode.com/problems/critical-connections-in-a-network/discuss/399827/Java-DFS-Solution-similar-to-Tarjan-maybe-easier-to-understand
      */
-    //TODO dfs 만들어보기 not using recursive (only use stack!!)
-
     static int T = 1;
     public static List<List<Integer>> criticalConnections1(int n, List<List<Integer>> connections) {
         // use a timestamp, for each node, check the samllest timestamp that can reach from the node
