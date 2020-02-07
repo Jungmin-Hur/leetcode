@@ -1,13 +1,12 @@
 package arraystringandhash;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@Flip(value= FlippedSchoolType.ARRAY_STRING_AND_HASH)
+@Flip
 public class FindDuplicateFileinSystem {
     public List<List<String>> findDuplicate(String[] paths) {
         HashMap<String, List<String>> map = new HashMap<>();

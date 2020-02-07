@@ -4,12 +4,11 @@
  */
 package dpandstack;
 
-import common.Acomp;
+import common.A;
 import common.Flip;
-import common.FlippedSchoolType;
 
-@Acomp
-@Flip(FlippedSchoolType.DP_STACK)
+@A
+@Flip
 public class LongestPalindrome {
 
     public static void main(String args[]) {

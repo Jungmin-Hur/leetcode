@@ -5,12 +5,10 @@
 package arraysandstring;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
-@Flip(value= FlippedSchoolType.ARRAY_STRING)
+@Flip
 public class ThreeSum {
 
     public static void main(String args[]) {

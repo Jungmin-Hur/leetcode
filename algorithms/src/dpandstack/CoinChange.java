@@ -5,7 +5,6 @@
 package dpandstack;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.Arrays;
 
@@ -19,7 +18,7 @@ import java.util.Arrays;
  * Output: -1
  */
 
-@Flip(FlippedSchoolType.DP_STACK)
+@Flip
 public class CoinChange {
     public static void main(String args[]) {
         System.out.println(coinChange(new int[]{186,419,83,408}, 6249));

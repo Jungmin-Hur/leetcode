@@ -1,13 +1,12 @@
 package arraysandstring;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 /**
  * 560. Subarray Sum Equals K
  * https://leetcode.com/problems/subarray-sum-equals-k/
  */
-@Flip(value= FlippedSchoolType.ARRAY_STRING)
+@Flip
 public class SubarraySumEqualsK {
     public int subarraySum(int[] nums, int k) {
         int total = nums.length;

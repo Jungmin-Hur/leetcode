@@ -1,13 +1,12 @@
 package hashtable;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-@Flip(value= FlippedSchoolType.HASH_TABLE)
+@Flip
 public class InsertDeleteGetRandomO1 {
     class RandomizedSet {
         Set<Integer> num;

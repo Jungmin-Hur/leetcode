@@ -5,11 +5,10 @@
 package arraysandstring;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.Arrays;
 
-@Flip(value= FlippedSchoolType.ARRAY_STRING)
+@Flip
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
         int intervalsSize = intervals.length;

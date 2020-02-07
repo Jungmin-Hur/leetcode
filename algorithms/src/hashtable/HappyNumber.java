@@ -1,12 +1,11 @@
 package hashtable;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Flip(value= FlippedSchoolType.HASH_TABLE)
+@Flip
 public class HappyNumber {
     public static void main(String args[]) {
         System.out.println(isHappy(1));

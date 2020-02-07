@@ -1,5 +1,5 @@
 package common;
 
 public @interface Flip {
-    FlippedSchoolType value();
+    String value() default "Flip";
 }

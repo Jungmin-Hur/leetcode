@@ -5,11 +5,10 @@
 package dpandstack;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.Stack;
 
-@Flip(FlippedSchoolType.DP_STACK)
+@Flip
 public class DecodeString {
     public static void main(String args[]) {
         System.out.println(decodeString("100[abc]"));

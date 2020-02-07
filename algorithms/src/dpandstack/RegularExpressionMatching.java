@@ -1,9 +1,8 @@
 package dpandstack;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
-@Flip(FlippedSchoolType.DP_STACK)
+@Flip
 public class RegularExpressionMatching {
     public boolean isMatch(String text, String pattern) {
         boolean[][] dp = new boolean[text.length() + 1][pattern.length() + 1];

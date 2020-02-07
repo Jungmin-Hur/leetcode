@@ -5,11 +5,10 @@
 package dpandstack;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.PriorityQueue;
 
-@Flip(FlippedSchoolType.DP_STACK)
+@Flip
 public class TaskScheduler {
 
     public static void main(String args[]) {

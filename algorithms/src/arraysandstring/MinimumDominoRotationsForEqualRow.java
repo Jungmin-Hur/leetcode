@@ -5,9 +5,8 @@
 package arraysandstring;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
-@Flip(value= FlippedSchoolType.ARRAY_STRING)
+@Flip
 public class MinimumDominoRotationsForEqualRow {
     public int minDominoRotations(int[] A, int[] B) {
         int totalLength = A.length;

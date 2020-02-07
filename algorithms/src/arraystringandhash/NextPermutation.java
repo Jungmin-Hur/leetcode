@@ -1,9 +1,8 @@
 package arraystringandhash;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
-@Flip(value= FlippedSchoolType.ARRAY_STRING_AND_HASH)
+@Flip
 public class NextPermutation {
     //풀이에 있는 답임
     public void nextPermutation(int[] nums) {

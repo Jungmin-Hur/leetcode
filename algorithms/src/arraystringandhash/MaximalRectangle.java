@@ -1,9 +1,8 @@
 package arraystringandhash;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
-@Flip(value= FlippedSchoolType.ARRAY_STRING_AND_HASH)
+@Flip
 public class MaximalRectangle {
     public static void main(String args[]) {
         System.out.println(maximalRectangle(new char[][]{

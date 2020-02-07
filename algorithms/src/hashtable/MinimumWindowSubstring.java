@@ -1,12 +1,11 @@
 package hashtable;
 
 import common.Flip;
-import common.FlippedSchoolType;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Flip(value= FlippedSchoolType.HASH_TABLE)
+@Flip
 public class MinimumWindowSubstring {
     public static void main(String args[]) {
         System.out.println(minWindow("ADOBECODEBANC","ABC"));
