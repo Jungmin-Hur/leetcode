@@ -7,11 +7,66 @@ package arraysandstring;
 import common.Flip;
 import common.FlippedSchoolType;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 @Flip(value= FlippedSchoolType.ARRAY_STRING)
 public class ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+
+    public static void main(String args[]) {
+        List<List<Integer>> ret = threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        for(List<Integer> item : ret) {
+            System.out.println(item.get(0) + "," + item.get(1) + "," + item.get(2));
+        }
+
+    }
+
+    //useing 2 pointer
+    public static List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+
+        Arrays.sort(nums); //sorting is nessasary !!
+
+        //기준점과 left, right 를 더했을 때 0이 되는 수가 존재하는지 찾는다.
+        for(int i = 0; i < nums.length; i++) {
+            int left = i+1;
+            int right = nums.length - 1;
+
+            int n1 = nums[i];
+            while(left < right) {
+                int n2 = nums[left];
+                int n3 = nums[right];
+
+                int tot = n1 + n2 + n3;
+                if(tot == 0) {
+//                    List<Integer> item = new ArrayList<>();
+//                    item.add(n1);
+//                    item.add(n2);
+//                    item.add(n3);
+                    res.add(Arrays.asList(n1, n2, n3));
+
+
+                    //같은 수는 체크하지 않기 위함
+                    while(left < right && nums[left] == nums[left+1]) left++;
+                    left++;
+                    while(left < right && nums[right] == nums[right-1]) right--;
+                    right--;
+
+                    left++;
+                    right--;
+                } else if(tot > 0) {
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    //almost brute-force
+    public List<List<Integer>> threeSum2(int[] nums) {
         Set<List<Integer>> retVal = new HashSet<>();
         Map<Integer, Integer> dic = new HashMap<>();
 
