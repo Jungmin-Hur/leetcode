@@ -55,15 +55,14 @@ public class CriticalConnectionsInANetwork {
     public static List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
 
         initialization(n);
-
         buildNetwork(connections);
-
         getCritialConnections(0, -1);
 
         return critialConnections;
     }
 
     public static void initialization(int n) {
+
         lowestVertex = new int[n];
         discoveredTime = new int[n];
         visited = new boolean[n];

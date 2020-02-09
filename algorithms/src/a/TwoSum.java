@@ -11,7 +11,12 @@ import java.util.Map;
 
 @A
 public class TwoSum {
-    public int[] twoSum(int[] nums, int target) {
+    public static void main(String args[]) {
+        int[] res = twoSum(new int[]{2, 7, 11, 15}, 9);
+        System.out.println(res.length);
+    }
+
+    public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> dic = new HashMap<>();
         int index=0;
         for(int num : nums) {
