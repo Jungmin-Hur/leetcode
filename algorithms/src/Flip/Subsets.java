@@ -1,4 +1,4 @@
-package mylist; /**
+package Flip; /**
  * 78. jmlist.Subsets
  * https://leetcode.com/problems/subsets/
  */
