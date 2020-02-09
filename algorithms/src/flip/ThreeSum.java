@@ -2,7 +2,7 @@
  * 15. 3Sum
  * https://leetcode.com/problems/3sum/
  */
-package Flip;
+package flip;
 
 import common.Flip;
 

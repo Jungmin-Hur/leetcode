@@ -1,4 +1,4 @@
-package Flip; /**
+package flip; /**
  * 78. jmlist.Subsets
  * https://leetcode.com/problems/subsets/
  */

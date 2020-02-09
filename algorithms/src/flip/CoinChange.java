@@ -2,7 +2,7 @@
  * 322. Coin Change
  * https://leetcode.com/problems/coin-change/
  */
-package Flip;
+package flip;
 
 import common.Flip;
 

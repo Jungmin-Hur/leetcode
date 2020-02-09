@@ -2,7 +2,7 @@
  * 5. Longest Palindromic Substring
  * https://leetcode.com/problems/longest-palindromic-substring/
  */
-package Flip;
+package flip;
 
 import common.A;
 import common.Flip;

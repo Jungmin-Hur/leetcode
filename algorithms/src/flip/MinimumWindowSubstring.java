@@ -1,4 +1,4 @@
-package Flip;
+package flip;
 
 import common.Flip;
 

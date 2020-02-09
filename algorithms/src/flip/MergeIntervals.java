@@ -2,7 +2,7 @@
  * 56. Merge Intervals
  * https://leetcode.com/problems/merge-intervals/
  */
-package Flip;
+package flip;
 
 import common.Flip;
 

@@ -2,7 +2,7 @@
  * 394. Decode String
  * https://leetcode.com/problems/decode-string/
  */
-package Flip;
+package flip;
 
 import common.Flip;
 
