@@ -2,7 +2,7 @@
  * 322. Coin Change
  * https://leetcode.com/problems/coin-change/
  */
-package dpandstack;
+package Flip;
 
 import common.Flip;
 

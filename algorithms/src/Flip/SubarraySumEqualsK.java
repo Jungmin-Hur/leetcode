@@ -1,4 +1,4 @@
-package arraysandstring;
+package Flip;
 
 import common.Flip;
 

@@ -1,4 +1,4 @@
-package arraystringandhash;
+package Flip;
 
 import common.A;
 import common.Flip;

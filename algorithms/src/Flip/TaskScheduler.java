@@ -2,7 +2,7 @@
  * 621. Task Scheduler
  * https://leetcode.com/problems/task-scheduler/
  */
-package dpandstack;
+package Flip;
 
 import common.Flip;
 
