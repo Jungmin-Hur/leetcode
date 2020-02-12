@@ -1,7 +1,14 @@
+/**
+ * 155. Min Stack
+ * https://leetcode.com/problems/min-stack/
+ */
 package amore;
+
+import common.A;
 
 import java.util.Stack;
 
+@A
 public class MinStack {
     Stack<Integer> stack;
     int min;
