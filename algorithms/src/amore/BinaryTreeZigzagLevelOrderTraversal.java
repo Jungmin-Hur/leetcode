@@ -5,11 +5,13 @@
 package amore;
 
 import common.A;
+import common.Flip;
 
 import java.util.*;
 
 //level order question
 @A
+@Flip
 public class BinaryTreeZigzagLevelOrderTraversal {
     public static class TreeNode {
         int val;
