@@ -28,6 +28,7 @@ public class WordSearch {
                 {'S','F','C','S'},
                 {'A','D','E','E'}}, "ABCCK")); //false
     }
+
     public static boolean exist(char[][] board, String word) {
         for(int i=0; i< board.length; i++) {
             for(int j=0; j<board[0].length; j++){
@@ -43,19 +44,17 @@ public class WordSearch {
         if(pos >= word.length()) return true;
 
         if(i < 0 || j < 0 || i > board.length - 1 || j > board[0].length - 1) return false;
+
         if(word.charAt(pos) != board[i][j]) return false;
 
         //dfs
-        board[i][j] = ' ';
+        char temp = board[i][j];
+        board[i][j] = ' '; // not for search, this is like visited = true;
         int[][] dir = new int[][]{{1,0},{-1,0},{0,1},{0,-1}};
         for(int d = 0; d < 4; d++) {
-            int x = i + dir[d][0];
-            int y = j + dir[d][1];
-
-//            if(word.charAt(pos) != board[x][y]) continue;
-            if(backtracking(x, y, pos + 1, board, word)) return true;
+            if(backtracking(i + dir[d][0], j + dir[d][1], pos + 1, board, word)) return true;
         }
-        board[i][j] = word.charAt(pos);
+        board[i][j] =  temp; //recover data.. this is like visited = false;
 
         return false;
     }
