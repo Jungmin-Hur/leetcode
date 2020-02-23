@@ -40,33 +40,20 @@ public class LowestCommonAncestorOfABinaryTree {
         TreeNode(int x) { val = x; }
     }
 
-    static int index = 1;
-
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // 가장아래까지 가거나 p, q까지 도달
-        if(root == null) {
-//            System.out.println("root == null: " + index++);
-            return root;
-        }
-        if(root == p || root == q) {
-//            System.out.println("root == p || root == q : "  + root.val + " : " + index++);
-            return root;
-        }
+        if(root == null) return root;
+        if(root == p || root == q) return root;
 
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
 
-        if(left == null) {
-            //left가 null이라면 right 하위에 나머지 노드가 존재하는 것
-//            System.out.println("left:" + root.val + " : " + index++);
-            return right;
-        }
-        else if(right == null) {
-            //right가 null이라면 left 하위에 나머지 노드가 존재하는 것임
-//            System.out.println("right:" + root.val + " : " + index++);
-            return left;
-        }
+        //left와 right가 모두 존재한다는 것은 서로 다른 루트에 존재하는 노드라는 뜻
+        if(left != null && right != null) return root;
 
-        return root; //left와 right가 모두 존재한다는 것은 서로 다른 루트에 존재하는 노드라는 뜻
+        //left가 null이라면 right 하위에 나머지 노드가 존재하는 것
+        if(left == null) return right;
+        // right가 null이라면 left 하위에 나머지 노드가 존재하는 것임
+        return left;
     }
 }
