@@ -14,7 +14,7 @@ import java.util.Set;
 @A
 public class MostCommonWord {
     public String mostCommonWord(String paragraph, String[] banned) {
-        String[] symbols = new String[]{"!","?","'",",",";",".","  "};
+        String[] symbols = new String[]{"!","?","'",",",";", "","  "};
         for(String symbol : symbols) {
             paragraph = paragraph.replace(symbol, " ");
         }
