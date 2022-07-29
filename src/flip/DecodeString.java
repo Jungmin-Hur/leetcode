@@ -16,12 +16,12 @@ public class DecodeString {
         System.out.println(decodeString("2[abc]3[cd]ef"));
         System.out.println(decodeString("3[a]2[bc]"));
     }
-
     /**
      * s = "3[a]2[bc]", return "aaabcbc".
      * s = "3[a2[c]]", return "accaccacc".
      * s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
      */
+
     /**
      * [가 나올때까지 pop해주어야 함
      * pop데이터를 모아둔다.
