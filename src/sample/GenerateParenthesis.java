@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 @Sample
 public class GenerateParenthesis {
-
     /**
      * For example, given n = 3, a solution set is:
      * [
@@ -22,6 +21,7 @@ public class GenerateParenthesis {
      * ]
      * @param args
      */
+    
     public static void main(String args[]) {
 
         System.out.println(generateParenthesis(3));
@@ -60,7 +60,7 @@ public class GenerateParenthesis {
         }
         return (balance == 0);
     }
-
+    //bactr...
 
     ////////////////////////////////////////////////////////////////////////////////////
     //backtracking version
