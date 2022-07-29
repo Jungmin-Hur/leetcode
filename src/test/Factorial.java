@@ -11,4 +11,3 @@ public class Factorial {
         return num * recursive(num-1);
     }
 }
-
